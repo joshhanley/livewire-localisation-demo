@@ -21,6 +21,6 @@ Route::prefix(LaravelLocalization::setLocale())
     ->group(function () {
         Route::get('/', Welcome::class);
         Route::get(__('routes.welcome'), Welcome::class);
-        Route::get('english', Welcome::class);
+        Route::get('entertainment', Welcome::class);
         Route::get('demo', Welcome::class);
     });
