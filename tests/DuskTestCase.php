@@ -2,15 +2,30 @@
 
 namespace Tests;
 
-use Illuminate\Support\Collection;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Illuminate\Support\Collection;
+use Laravel\Dusk\Browser;
 use Laravel\Dusk\TestCase as BaseTestCase;
+use Livewire\Macros\DuskBrowserMacros;
+use Tests\Browser\BrowserOverride;
 
 abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        
+        Browser::mixin(new DuskBrowserMacros);
+    }
+
+    protected function newBrowser($driver)
+    {
+        return new BrowserOverride($driver);
+    }
 
     /**
      * Prepare for Dusk test execution.
