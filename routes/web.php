@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Welcome::class);
+
+Route::prefix(LaravelLocalization::setLocale())
+    ->middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
+    ->group(function () {
+        Route::get('/', Welcome::class);
+        Route::get(__('routes.welcome'), Welcome::class);
+        Route::get('english', Welcome::class);
+        Route::get('demo', Welcome::class);
+    });
