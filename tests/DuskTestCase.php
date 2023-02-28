@@ -66,7 +66,8 @@ abstract class DuskTestCase extends BaseTestCase
      */
     protected function hasHeadlessDisabled(): bool
     {
-        return isset($_SERVER['DUSK_HEADLESS_DISABLED']) ||
+        return ! isset($_SERVER['CI']) || 
+                isset($_SERVER['DUSK_HEADLESS_DISABLED']) ||
                isset($_ENV['DUSK_HEADLESS_DISABLED']);
     }
 
