@@ -80,7 +80,7 @@ class DutchLocaleTest extends DuskTestCase
                 ->waitForLivewire()->click('@increaseCount')
 
                 ->assertPathIs('/de/demo')
-                ->assertSeeIn('@locale', 'en')
+                ->assertSeeIn('@locale', 'de')
                 ->assertSeeIn('@count', 1)
             ;
         });
