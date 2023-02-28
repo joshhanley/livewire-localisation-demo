@@ -11,7 +11,7 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^2.12",
+        "livewire/livewire": "dev-add-locale-prefix",
         "mcamara/laravel-localization": "^1.8"
     },
     "require-dev": {
@@ -65,5 +65,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "livewire/livewire": {
+            "type": "vcs",
+            "url": "https://github.com/joshhanley/livewire"
+        }
+    }
 }

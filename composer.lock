@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e0f0092990243a5cb1386277cfb58c8",
+    "content-hash": "44d0749750445235afa91e7ea4710208",
     "packages": [
         {
             "name": "brick/math",
@@ -1784,16 +1784,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.12.1",
+            "version": "dev-add-locale-prefix",
             "source": {
                 "type": "git",
-                "url": "https://github.com/livewire/livewire.git",
-                "reference": "c0bd6619358b333f5e47428a4413cc5d24bd60dd"
+                "url": "https://github.com/joshhanley/livewire.git",
+                "reference": "febbe1fe9c91209b00ccd1f131a2d469a5ad7d8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/c0bd6619358b333f5e47428a4413cc5d24bd60dd",
-                "reference": "c0bd6619358b333f5e47428a4413cc5d24bd60dd",
+                "url": "https://api.github.com/repos/joshhanley/livewire/zipball/febbe1fe9c91209b00ccd1f131a2d469a5ad7d8d",
+                "reference": "febbe1fe9c91209b00ccd1f131a2d469a5ad7d8d",
                 "shasum": ""
             },
             "require": {
@@ -1832,7 +1832,12 @@
                     "Livewire\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "App\\": "vendor/orchestra/testbench-core/laravel/app",
+                    "Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -1844,16 +1849,15 @@
             ],
             "description": "A front-end framework for Laravel.",
             "support": {
-                "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v2.12.1"
+                "source": "https://github.com/joshhanley/livewire/tree/add-locale-prefix"
             },
             "funding": [
                 {
-                    "url": "https://github.com/livewire",
-                    "type": "github"
+                    "type": "github",
+                    "url": "https://github.com/livewire"
                 }
             ],
-            "time": "2023-02-22T21:13:21+00:00"
+            "time": "2023-02-28T04:01:38+00:00"
         },
         {
             "name": "mcamara/laravel-localization",
@@ -8093,8 +8097,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "livewire/livewire": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
